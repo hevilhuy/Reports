@@ -1,0 +1,38 @@
+What is CRM?
+The objective of CRM?
+Common mistakes when developing CRM.
+Ways to deploy Dynamics 365.
+
+Master data:
++ Account, Contact, Lead - How to create and what is it?
+
+Sales:
++ Convert Lead to Opportunity.
++ Create Quote.
++ Convert Quote to Order.
++ What is Quote, Order, Opportunity. 
++ Invoice. => X
+* How to create and what is it?
++ Competitors.  => X
++ Product.
++ Sales Literature. => X
+
+Service:
++ Cases.
++ Knowledge Article. => Customer Service Hub. => X
++ Routing Rules.
++ Automatic Record creation and update.
++ Entitlement.
++ SLA.
++ Service Calendar.
+* How to create and what is it?
++ Assign Case to a specify user.
++ Associate Case to Entitlement.
+
+Marketing:
++ Markrting List.
++ Campaign.
+  - Campaign Response.
++ Quick Campaign.
+* How to create and what is it?
++ Convert Campagin Response to opportunity, lead, contact, account.

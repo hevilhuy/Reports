@@ -1,0 +1,43 @@
+- CRM.
+- Master data:
+  + Account
+  + Contact
+  * Life cycle
+
+- Sales:
+  + Account
+  + Contact
+  + Lead
+  + Opportunity
+  + Competitor
+  + Quote
+  + Order
+  + Invoice
+  + Product
+  + Sales Literature
+  * Life cycle
+
+- Service:
+  + Case
+  + Knowledge Article
+  + Article Template
+  + Routing Rule
+  + Queue
+  + Entitlement
+  + Automatic Record Creation and Update Rules
+  * Life cycle
+
+- Deprecated Components
+  + Service Scheduling:
+    1/ Service Calendar.
+    2/ Resource.
+    3/ Resource Group.
+    4/ Work Hours.
+    5/ Services.
+    6/ Sites.
+  + Contract:
+    1/ Contract Template.
+    2/ Contract.
+  + Article:
+    1/ Article.
+    2/ Article Template.

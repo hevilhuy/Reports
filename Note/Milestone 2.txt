@@ -1,0 +1,115 @@
+Customizing Fields:
+   - System fields: can be modified, cannot be deleted.
+   - Custom fields: can be modified and deleted.
+   - Field type:
+     * Simple: No formula.
+     * Calculated: Based on a formula. Formula input: fields from current/parent entity.
+     * Rollup: Aggregate value computed from the records related to a record, or a value computed over a hierarchy.
+   - Display Name: label for CRM.
+   - Name: column name for the field in SQL Server database.
+   - Field security: this field is non-customizable if enabled.
+   - Auditing.
+   - Field Requirement:
+     * Business Required: must be filled in order to save.
+     * Business Recommended.
+     * Optional.
+   - Searchable.
+   - Description.
+   - Data Type: 
+     * Single Line of Text, Option Set, Multi-Option Select, Two Options, Image, Floating Point Number, Decimal Number, Currency, Multiple Lines of Text, Date and Time.
+     * Lookup: refer to another entity.
+     * Customer: refer to an account/contact.
+     * Whole Number: integer.
+   - Calculated fields characteristic:
+     * Updates to these fields won’t trigger workflow updates
+     * Fields are only available for retrieve in plugins and are not available as part of create or update plugin context
+     * Fields are virtual and not stored at the database level
+     * You cannot mix and/or statements.  Can only use all OR’s or all AND’s
+     * Can only go up on level to access data on N:1 relationships
+   - Rollup fields characteristic:
+     * Rollup field calculation does not get preformed in real time
+     * Value is stored in the database as a actual field
+     * Recalculating a rollup field will not trigger the update plugin context.
+Customizing Entities:
+    - Types of entity:
+      + Normal entity.
+      + Activitiy entity: has time dimension.
+      + Virtual entity: has fields containing data from an external data source.
+        * External Name: name of the table in external data source.
+        * External Collection Name: plural name of the table in external data source.
+        * Virtual entity read-only, no auditing & change tracking, can't be activity type, no rollups & calculated field.
+    - Some options can't be disabled once activated.
+    - Areas that display this entity.
+    - Primary Field: the name of entity in list, this can't be changed after creation, data type must be Single Line of Text, format must be Text.
+    - Data Service:
+      * Allow Quick Create: need Quick Create Form for this entity first.
+    - Entities for phone: Hide/show entity on phone.
+      * Step 1: Select an entity.
+      * Step 2: Change Outlook & Mobile settings.
+        + Enable for phone express: enable this entity on previous version of Dynamics 365 for phone.
+        + Enable for mobile.
+        + Read-only in mobile.
+Customizing Forms:
+    - Types of form:
+      * Main: Interact with entity data.
+      * Card: For reading purpose only.
+      * Quick Create: Update entity, basic form optimized for create.
+      * Quick View: Display additional data.
+    - Structure of a Form:
+      * Header: cannot be removed.
+      * Body: Between Header and Footer tab, can have multiple tabs, must have at least 1 tab.
+      * Footer: cannot be removed.
+    - Form Order: use when have multiple main/quick create/mobile form for an entity. Set the default form.
+    - Enable Security Roles: allow or restrict people from access certain forms. Can only use this function for Main forms.
+    - Design form for phones: 
+      * Step 1: Select fields, sections, entire tabs 
+      * Step 2: Change properties => Available on phone.
+    - Add controls for a field: Display different controls on different platform.
+      * Step 1: Double click a field.
+      * Step 2: Controls => Add Control.
+Customizing Views:
+    - Views is used to define how a list of records for a specific entity is displayed in the application. A view defines: what columns to display, how wide each column, how it is sorted by default, which is default filter.
+    - Personal views: User create their own views by Advance Find or Save Filter function and save them.
+    - Public views: Everyone can access it, can be defined as a default view. Used for general purpose.
+    - Systen views: Similar to public views but are created automatically by CRM. Used for unique situations.
+    - System administrator and system customizer can use control Editable Grid or Read Only Grid to create view.
+Workflow:
+    - Workflow is automate business process without a user interface. Usually used for tasks that doesn't require user to interact.
+    - Each workflow process associate with a single entity.
+    - Background workflow (asynchronous).
+    - Real-time workflow (synchronous).
+    - Can convert to background/real-time workflow anytime.
+    - Scope: workflow will run on which records.
+      * User.
+      * Business Unit.
+      * Parent: Child Business Unit.
+      * Organization.
+    - Start when:
+      * Record is created.
+      * Record status changes.
+      * Record is assigned.
+      * Record is deleted.
+      * Record fields change.
+    - Workflow step: what extractly workflow will perform. Workflow runs steps from steps.
+      * Stage: split workflow into sections.
+      * Check Condition: add if __ then __ statement.
+      * Conditional Branch: must follow Check Condition. Add else __ if __ then __.
+      * Default Action: must follow Check Condition. Add else __.
+      * Wait Condition: real-time workflow cannot use this. Pause the workflow until the condition has been met.
+      * Parallel Wait Branch: same as Wait Condition but runs parallel to the workflow.
+      * Create Record.
+      * Update Record.
+      * Assign Record.
+      * Send Email: can send email based on a template.
+      * Start Child Workflow: Usually used to perform a task outside the original selected entity.
+      * Change Status.
+      * Stop Workflow.
+    - Infinite loops: Dynamics 365 would cancel processes that exceed loop depth, the loop depth is 8 and will reset after 10 minutes of inactivity.
+    - Monitor workflow status: Settings => System Jobs.
+    - Life cycle: Draft => Active.
+Chart
+    - Chart is a graphic representation of data from multiple records of an entity. Built from query on data.
+    - System Charts: Created by System Administrator or System Customizer. These charts are by default visible to all users.
+    - User Charts: Created by any user. Only visible to owner and shared users.
+Dashboard
+    - Dashboard is a quick report, a set of charts, shows everytime user logged in.

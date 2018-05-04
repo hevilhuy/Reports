@@ -1,0 +1,4 @@
+What is rollup field?
+Rollup vs Calculated same meaning?
+Dynamics 365 use SQL Database to store information?
+Field Requirement: Business Recommended vs Optional. What is the different?
