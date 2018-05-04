@@ -3,8 +3,8 @@ Customizing Fields:
    - Custom fields: can be modified and deleted.
    - Field type:
      * Simple: No formula.
-     * Calculated: Based on a formula. Formula input: fields from current/parent entity.
-     * Rollup: Aggregate value computed from the records related to a record, or a value computed over a hierarchy.
+     * Calculated: Based on a formula. Formula input: fields from current/parent entity. Only apply when Data Type is not: MultiSelect Option Set, Image, Floating Point Number,  Multiple Lines of Text, Lookup, Customer.
+     * Rollup: Aggregate value computed from the records related to a record, or a value computed over a hierarchy. Only apply when Data Type is: Whole Number, Decimal Number, Currency, Date and Time.
    - Display Name: label for CRM.
    - Name: column name for the field in SQL Server database.
    - Field security: this field is non-customizable if enabled.
