@@ -74,7 +74,7 @@ Customizing Views:
     - Systen views: Similar to public views but are created automatically by CRM. Used for unique situations.
     - System administrator and system customizer can use control Editable Grid or Read Only Grid to create view.
 Workflow:
-    - Workflow is automate business process without a user interface. Usually used for tasks that doesn't require user to interact.
+    - Workflow is automate business process without a user interface. Usually used for tasks that don't require user to interact.
     - Each workflow process associate with a single entity.
     - Background workflow (asynchronous).
     - Real-time workflow (synchronous).
@@ -104,7 +104,7 @@ Workflow:
       * Start Child Workflow: Usually used to perform a task outside the original selected entity.
       * Change Status.
       * Stop Workflow.
-    - Infinite loops: Dynamics 365 would cancel processes that exceed loop depth, the loop depth is 8 and will reset after 10 minutes of inactivity.
+    - Infinite loops: Dynamics 365 would cancel processes that exceed loop depth, the loop depth is 16 and will reset after 10 minutes of inactivity.
     - Monitor workflow status: Settings => System Jobs.
     - Life cycle: Draft => Active.
 Chart
