@@ -1,0 +1,10 @@
+Create campaign
+Execute campaign
+Create lead
+Qualify lead
+Update account
+Add contact to account
+Create opportunity of lead
+Create quote
+Customer accept quote
+Create order from quote
