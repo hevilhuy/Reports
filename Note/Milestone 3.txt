@@ -1,0 +1,5 @@
+Area that can apply Javascript:
+  - Form.
+  - Command bar (ribbon).
+  - Web resources.
+Avoid using jQuery in form and ribbon.
