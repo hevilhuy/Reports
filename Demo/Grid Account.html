@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <title>Red Wei Test</title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="ClientGlobalContext.js.aspx"></script>
+    <script type="text/javascript">
+        var Xrm = window.parent.Xrm;
+        //$.ajax({
+        //    type: "GET",
+        //    url: "https://tigeress.crm5.dynamics.com/api/data/v8.2/accounts",
+        //    dataType: "json",
+        //    contentType: "application/json; odata.metadata=minimal",
+        //    beforeSend: function (req)
+        //    {
+        //        req.setRequestHeader("OData-MaxVersion", "4.0");
+        //        req.setRequestHeader("OData-Version", "4.0");
+        //    },
+        //    success: function (data)
+        //    {
+        //        alert(data[0].name);
+        //    }
+        //});
+
+        //https://tigeress.api.crm5.dynamics.com/api/data/v9.0/accounts
+        //https://tigeress.crm5.dynamics.com/api/data/v8.2/accounts
+        var req = new XMLHttpRequest();
+        req.open("GET", encodeURI("https://tigeress.crm5.dynamics.com/api/data/v8.2/accounts"), true);
+        req.setRequestHeader("Accept", "application/json");
+        req.setRequestHeader("Content-Type", "application/json; charset=utf-8");
+        req.setRequestHeader("OData-MaxVersion", "4.0");
+        req.setRequestHeader("OData-Version", "4.0");
+        req.setRequestHeader("Access-Control-Allow-Origin", "*");
+        req.onreadystatechange = function ()
+        {
+            if (this.readyState == 4)
+            {
+                var jsonData = JSON.parse(req.response);
+                var dataRows = jsonData.value;
+                dataRows.forEach(function (row)
+                {
+                    var table = document.getElementById("table_account");
+                    var tr = document.createElement("tr");
+
+                    var columnName = document.createElement("td");
+                    var commandLink = document.createElement("a");
+                    commandLink.href = "#";
+                    commandLink.onclick = function ()
+                    {
+                        Xrm.Utility.openEntityForm("account", row.accountid);
+                    }
+                    var columnNameValue = document.createTextNode(row.name);
+                    commandLink.appendChild(columnNameValue)
+                    columnName.appendChild(commandLink);
+                    tr.appendChild(columnName);
+
+                    var columnPhone = document.createElement("td");
+                    var columnPhoneValue = document.createTextNode(row.telephone1);
+                    columnPhone.appendChild(columnPhoneValue);
+                    tr.appendChild(columnPhone);
+
+                    var columnEmail = document.createElement("td");
+                    var columnEmailValue = document.createTextNode(row.emailaddress1);
+                    columnEmail.appendChild(columnEmailValue);
+                    tr.appendChild(columnEmail)
+
+                    var columnWeb = document.createElement("td");
+                    var columnWebValue = document.createTextNode(row.websiteurl);
+                    columnWeb.appendChild(columnWebValue);
+                    tr.appendChild(columnWeb)
+
+                    table.appendChild(tr);
+                })
+            }
+        };
+        req.send();
+    </script>
+</head>
+<body>
+    <!--<div id="display">Sample Text</div>-->
+    <table id="table_account" style="width:100%">
+        <tr>
+            <th>Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Primary Contact</th>
+        </tr>
+    </table>
+</body>
+</html>

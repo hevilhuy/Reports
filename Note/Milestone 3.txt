@@ -2,4 +2,8 @@ Area that can apply Javascript:
   - Form.
   - Command bar (ribbon).
   - Web resources.
-Avoid using jQuery in form and ribbon.
+Avoid using jQuery in form and ribbon. Instead, use XMLHttpRequest to perform AJAX.
+Access form element by Xrm.Page.
+  - Xrm.Page.content: retrieve information specific to organization, user, parameter that were passed to the form in a query string.
+  - Xrm.Page.data.entity: has collections and methods to manage data within the entity form.
+  - XRM.Page.ui: has collections and methods to manage the user interface of the form.

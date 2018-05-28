@@ -1,0 +1,22 @@
+Customer Service != Field Service.
+
+Field Service is completely on site, remote control to resolve case.
+Field Service is to track our activities, which actions we are going to perform, inform these to customer so they can feel we are providing a good service.
+
+Everything that comes from customer can be converted to Work Order.
+When have Work Order, we schedule it, appoint it to technicians.
+Technicians check on repository for the items required to solve Work Order.
+Technicians will work on the schedule.
+Update contract.
+
+GPS is included on Field Service.
+
+CSR Agent creates Work Order.
+Dispatcher assigns Work Order, identify and organize available resources.
+Field Technician solve Work Order.
+Inventory Manager manage items to carry to solve Work Order, creates & approves invoices of needed resources.
+Field Manager create Invoice based on Work Order, review and appvoe that Work Order is completed.
+
+Work Order can be automatically assigned by Resource Schedling (?).
+
+When a Work Order is closed, an invoice is generated.

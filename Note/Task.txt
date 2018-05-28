@@ -1,0 +1,1 @@
+Create a grid account in "Test 2" main form. Load all accounts, when click on an account redirect to that account page.

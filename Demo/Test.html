@@ -1,0 +1,36 @@
+<html>
+<head>
+    <title>Red Wei Test</title>
+    <script type="text/javascript" src="ClientGlobalContext.js.aspx"></script>
+    <script type="text/javascript">
+        var parameters = GetGlobalContext().getQueryStringParameters();
+        var param = parameters.data;
+        var Xrm = window.parent.Xrm;
+
+        function OnLoad()
+        {
+            alert("On load event.");
+        };
+
+        var new_name = Xrm.Page.getAttribute("new_name");
+
+        new_name.addOnChange(function (context)
+        {
+            if (new_name.getValue().toLowerCase().includes("test"))
+            {
+                Xrm.Page.getControl("new_name").setNotification("No \"Test\" in name.","err_name_contains_test");
+            }
+            else
+            {
+                Xrm.Page.getControl("new_name").clearNotification("err_name_contains_test");
+                Xrm.Page.getAttribute("new_generatedname").setValue("Generated " + new_name.getValue());
+            }
+        })
+        //enable later
+        OnLoad();
+    </script>
+</head>
+<body>
+    <script>document.write(param)</script>
+</body>
+</html>
